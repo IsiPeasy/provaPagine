@@ -1,0 +1,376 @@
+/******** GENERAL ********/
+html{
+	font-size: 62.5%; 
+	/*In questo modo si ha 1rem= 10px*/
+}
+body{
+	font-family: 'Overpass Mono', monospace;
+	font-size: 1.6rem;
+}
+a{
+	text-decoration: none;
+	font-size: 1.5rem;
+	color: black;
+}
+*{
+	box-sizing: border-box;
+}
+.active{
+	background-color: #404108;
+	border-radius: 3px;
+}
+h1{
+	font-size: 1.8rem;
+}
+img{
+	width: 100%;
+}
+/******** HEADER ********/
+header{
+	background-color:#000000;
+	width: 100%;
+	z-index: 1;
+	box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.3);
+}
+header .logo-container{
+	padding-top: 30px;
+	padding-left: 10px; 
+}
+header img{
+	width: 160px;
+}
+/******** MENU NAVIGAZIONE ********/
+nav ul {
+	padding: 5px; 
+	margin: 0;
+	list-style-type: none; 
+	text-align: center;
+}
+nav li{
+	padding:10px 10px 0 10px;
+	display: inline-block;
+	text-align: center;
+}
+nav li a:hover{
+	background-color: #404108;
+	border-radius: 3px;
+}
+nav li a{
+	color: #FFC000;
+	display: inline-block;
+	padding: 10px 10px;
+	text-decoration: none;
+	text-transform: uppercase;
+	transition: background .5s;
+}
+/******** BANNER BUTTON  ********/
+.btn{
+	display: inline-block;
+	background-color: #FFC000;
+	padding: 12px 24px;
+	text-transform: uppercase;
+	border: 0;
+	transition: background: .3s;
+	border-radius: 10px 10px 30px 5px;
+}
+.btn:hover{
+	background: #FFFF00;
+}
+.btn{
+	animation: fade-in 1s 2s forwards ease-in;
+}
+#hero h1{
+	opacity: 0.5;
+	animation: fade-to-left 1s 0s forwards ease-in;
+}
+#hero h2{
+	opacity: 0.5;
+	animation: fade-to-right 1s 0s forwards ease-in;
+}
+/******** GALLERY  ********/
+#gallery{
+	padding-bottom: 40px;
+}
+.gallery{
+	display: flex;
+	flex-wrap: wrap;
+}
+.picture{
+	padding:25px; 
+}
+#gallery img{
+	width: 190px;
+	height: 190px;
+}
+#gallery .picture{
+	line-height: 0;
+}
+#gallery .items{
+	/*float: left;
+	width: 50%;
+	padding: 15px;*/
+	text-align: center;
+	transition: all .5s;
+	position: relative;
+	padding: 2px; 
+	box-shadow: 10px 10px 8px 2px rgba(0,0,0,0.2);
+}
+/*
+#gallery .items:nth-child(2){
+	transform: translate(200px);
+}*/
+#gallery .items:hover{
+	opacity: .7;
+	transform: scale(1.05);
+}
+.caption:hover{
+	color: #FFC000;
+}
+#gallery .caption img{
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+/******** ABOUT ********/
+#about img{
+	border-radius: 100%;
+	padding: 0;
+}
+
+/******** INFO & CONTACTS ********/
+#contatti .material-icons{
+	float: left;
+}
+#contatti li a{
+	margin-top: 3px;
+	display: inline-block;
+}
+/******** FOOTER ********/
+footer.main{
+	text-align: center;
+	padding: 15px; 
+}
+footer.main p{
+	font-size: 1.2rem;
+}
+footer.main a{
+	display: inline-block;
+	padding: 5px 10px;
+}
+.clearfix::after{
+	content: "";
+	clear: both;
+	display: table;
+}
+#social img{
+	width: 40px;
+	border-radius: 8px;
+}
+	/******** VIDEO ********/
+	#video{
+		padding: 70px;
+	}
+	#video video{
+		width: 100%;
+		border-radius: 15px;
+	}
+	/******** VIDEO BACKGROUNG ********/
+	#video-background .caption{
+		text-align: center;
+		padding-left: 120px 0;
+	}
+	#video-background{
+		position: relative;
+		overflow: auto;
+		/*tutto ciò che esce dal contenitore viene nascosto*/
+	}
+	#video-background video{
+		position: absolute;
+		top: 50%;
+		width: 100%;
+		z-index: -2;
+		transform: translateY(-50%);
+	}
+/******** MEDIA QUERIES ********/
+@media only screen and (min-width: 768px){
+/******** BANNER  ********/
+#hero{
+	background: url("../immagini/back.jpg");
+/*per scurire un'immagine*/
+/*linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5))*/
+/*background-image:radial-gradient(circle at top ,#colore, #colore)*/
+	background-size: 35%;
+	background-repeat: no-repeat;
+	background-position: bottom;
+	padding-top: 470px;
+}
+#con{
+	position: relative;
+	height: 200px;
+	text-align: center;
+}
+#hero .hero-caption{
+	text-align: center;
+}	
+header{
+position: fixed;
+top: 0;
+}
+main{
+	padding-top: 0;
+}
+/******** GALLERY  ********/
+.header{
+	display: flex;
+	justify-content: space-around; 
+	align-items: center;
+}
+/******** GALLERY  ********/
+#gallery{
+	padding-top: 200px;
+	padding-left: 5%;
+}
+#gallery .items{
+	flex: 0 1 31%;
+	padding: 5%;
+}
+/*#gallery .items{
+	float: left;
+	width: 33.3333%;
+	}
+	#gallery .items:nth-child(3n+1){
+		clear: left;
+	}*/
+/******** FOOTER ********/
+#about{
+	padding: 200px 0;
+}
+	#about h1{
+		text-align: center;
+		font-size: 1.8rem; 
+	}
+	#about img{
+		width: 100%;
+	}
+	#about .profile-pic{
+		width: 49%;
+		float: left;
+		padding: 25px;
+		text-align: center;
+	}
+	#about .description{
+		width: 40%;
+		float: right;
+		padding: 25px;
+	}
+	/******** INFO & CONTACTS ********/
+	#info, #contatti{
+		padding: 200px 25px 0 25px;
+	}
+	#info{
+		width: 70%;
+		float: left;
+	}
+	#contatti{
+		width: 30%;
+		float: right;	
+	}
+	#infoecontatti h1{
+		font-size: 1.8rem;
+	}
+	#infoecontatti ul{
+		list-style-type: none;
+		padding-left: 0;
+	}
+	#infoecontatti li{
+		padding: 5px 5px;
+	}
+}
+
+@media only screen and (max-width: 768px){
+	/******** BANNER  ********/
+#hero{
+	background-image: url("../immagini/back.jpg");
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: bottom;
+}
+#hero .hero-caption{
+	text-align: center;
+	padding: 65px 10px;
+}
+*{
+	align-content: center;
+}
+/******** GALLERY  ********/
+header .logo-container{
+	text-align: center;
+}
+#gallery .items{
+	flex: 0 1 100%;
+	margin: 10%;
+}
+/******** GALLERY ********/
+/*#gallery .items:nth-child(2n+1){
+	clear: left;
+}*/
+/******** INFO & CONTACTS ********/
+	#info{
+		padding: 25px;
+	}
+	#contatti{
+		padding: 25px;
+
+	}
+	#infoecontatti ul {
+	list-style-type: none;
+	padding-left: 0px;
+	text-align: left;
+	}
+/******** GALLERY ********/
+	.description {
+		padding: 25px;
+	}
+	.profile-pic {
+		padding: 25px 25px 25px 25px;
+}
+
+@media only screen and (min-width: 190px){
+	*{
+	box-sizing: content-box;
+	}
+}
+/******** ANIMATION ********/
+@keyframes fade-in {
+	0%{
+		opacity: 0;
+	}
+	100%{
+		opacity: 1;
+	}
+}
+@keyframes fade-to-left {
+	0%{
+		opacity: 0;
+		transform: translateX(50px);
+	}
+	100%{
+		opacity: 0.5;
+		transform: translateX(0);
+	}
+}
+@keyframes fade-to-right{
+	0%{
+		opacity: 0;
+		transform: translateX(-50px);
+	}
+	100%{
+		opacity: 0.5;
+		transform: translateX(0);
+	}
+}
+
+
+
